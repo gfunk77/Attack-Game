@@ -46,7 +46,25 @@
         <h2>game log</h2>
         <ul>
           <li v-for="log in gameStats" :key="log">
-            {{ log.who }} - {{ log.action }} - {{ log.type }}
+            <span
+              :class="{alienLog: log.who === 'alien', playerLog: log.who === 'player'}"
+            >
+              {{ log.who === 'player' ? 'Player' : 'Alien'}}
+            </span>
+
+            <span v-if="log.action === 'recover'">
+              recovers for <span class="heal">{{ log.type }}</span>
+            </span>
+
+            <span v-else-if="log.action === 'special attack'">
+              special attacks and deals
+              <span class="damage">{{ log.type }}</span>
+            </span>
+
+            <span v-else>
+              attacks and deals
+              <span class="damage">{{ log.type }}</span>
+            </span>
           </li>
         </ul>
       </section>
