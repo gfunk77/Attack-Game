@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  background: url(/spacePic.jpg) center/cover no-repeat;
+  background: linear-gradient(to bottom, transparent 0%, black 90%),
+    url(/spacePic.jpg) center/cover no-repeat;
   background-attachment: fixed;
   color: #fffffe;
 }
