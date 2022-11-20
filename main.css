@@ -75,6 +75,20 @@ button {
   display: inline-block;
   font-family: inherit;
   font-weight: 700;
+  box-shadow: var(--dark-shadow);
+  cursor: grab;
+}
+button:hover,
+button:active {
+  background-color: #550055;
+}
+button:disabled {
+  background-color: #aaa;
+  border-color: #aaa;
+  cursor: not-allowed;
+}
+button:focus {
+  outline: none;
 }
 #controls {
   display: flex;
