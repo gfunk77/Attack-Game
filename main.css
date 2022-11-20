@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,12 +7,12 @@
 }
 
 html {
-  font-family: "Electrolize", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 
 body {
   background: url(/spacePic.jpg) center/cover no-repeat;
-  height: 100vh;
+  background-attachment: fixed;
   color: #fffffe;
 }
 
@@ -107,4 +107,11 @@ button:focus {
 
 #game-log {
   text-align: center;
+}
+#game-log ul {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+#game-log li {
+  margin: 0.5rem 0;
 }
