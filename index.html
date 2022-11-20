@@ -27,13 +27,20 @@
           <div :style="healthMeterPlayer" class="health-meter"></div>
         </div>
       </section>
-      <section id="controls">
+      <section v-if="winner" id="game-over" class="container">
+        <h2>Game Over</h2>
+        <h3 v-if="winner === 'alien'">👽 Humanity is destroyed</h3>
+        <h3 v-else-if="winner === 'player'">🎉 You have defeated the aliens</h3>
+        <h3 v-else>🟰 You have negotiated a treaty with the aliens</h3>
+        <button>Start New Game</button>
+      </section>
+      <section v-else id="controls">
         <button @click="attackAlien">Primary Attack</button>
         <button :disabled="enableSpecial" @click="specialAttack">
           Special Attack
         </button>
         <button :disabled="enableRecover" @click="recover">Recover</button>
-        <button>Surrender</button>
+        <button>Abduction</button>
       </section>
       <section id="game-log" class="container">
         <h2>game log</h2>

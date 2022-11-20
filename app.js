@@ -8,7 +8,24 @@ const app = Vue.createApp({
       alienHealth: 100,
       playerHealth: 100,
       attackCounter: 0,
+      winner: null,
     };
+  },
+  watch: {
+    alienHealth(value) {
+      if (value <= 0 && this.playerHealth <= 0) {
+        this.winner = "draw";
+      } else if (value <= 0) {
+        this.winner = "player";
+      }
+    },
+    playerHealth(value) {
+      if (value <= 0 && this.alienHealth <= 0) {
+        this.winner = "draw";
+      } else if (value <= 0) {
+        this.winner = "alien";
+      }
+    },
   },
   computed: {
     healthMeterAlien() {
