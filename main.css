@@ -90,6 +90,13 @@ button:disabled {
 button:focus {
   outline: none;
 }
+
+#game-over {
+  text-align: center;
+}
+#game-over h3 {
+  padding: 1rem 0;
+}
 #controls {
   display: flex;
   flex-wrap: wrap;
