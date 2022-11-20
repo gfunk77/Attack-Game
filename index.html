@@ -18,17 +18,17 @@
       <section id="alien" class="container">
         <h2>alien</h2>
         <div class="health">
-          <div class="health-meter"></div>
+          <div :style="healthMeterAlien" class="health-meter"></div>
         </div>
       </section>
       <section id="player" class="container">
         <h2>player</h2>
         <div class="health">
-          <div class="health-meter"></div>
+          <div :style="healthMeterPlayer" class="health-meter"></div>
         </div>
       </section>
       <section id="controls">
-        <button>Primary Attack</button>
+        <button @click="attackAlien">Primary Attack</button>
         <button>Special Attack</button>
         <button>Recover</button>
         <button>Surrender</button>
