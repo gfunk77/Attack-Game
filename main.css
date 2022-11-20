@@ -115,3 +115,16 @@ button:focus {
 #game-log li {
   margin: 0.5rem 0;
 }
+
+.alienLog {
+  color: #c68000;
+}
+.playerLog {
+  color: var(--purple);
+}
+.damage {
+  color: var(--red);
+}
+.heal {
+  color: var(--green);
+}
