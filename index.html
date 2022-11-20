@@ -32,7 +32,7 @@
         <button :disabled="enableSpecial" @click="specialAttack">
           Special Attack
         </button>
-        <button>Recover</button>
+        <button :disabled="enableRecover" @click="recover">Recover</button>
         <button>Surrender</button>
       </section>
       <section id="game-log" class="container">

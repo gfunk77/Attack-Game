@@ -26,6 +26,9 @@ const app = Vue.createApp({
     enableSpecial() {
       return this.attackCounter % 3 !== 0;
     },
+    enableRecover() {
+      return this.attackCounter % 2 !== 0;
+    },
   },
   methods: {
     attackAlien() {
@@ -42,6 +45,12 @@ const app = Vue.createApp({
       this.attackCounter++;
       const attackValue = getRandomNumber(8, 20);
       this.alienHealth -= attackValue;
+      this.attackPlayer();
+    },
+    recover() {
+      this.attackCounter++;
+      const recoverValue = getRandomNumber(12, 22);
+      this.playerHealth += recoverValue;
       this.attackPlayer();
     },
   },
