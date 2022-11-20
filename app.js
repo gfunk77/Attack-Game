@@ -7,6 +7,7 @@ const app = Vue.createApp({
     return {
       alienHealth: 100,
       playerHealth: 100,
+      attackCounter: 0,
     };
   },
   computed: {
@@ -22,9 +23,13 @@ const app = Vue.createApp({
       }
       return { width: this.playerHealth + "%" };
     },
+    enableSpecial() {
+      return this.attackCounter % 3 !== 0;
+    },
   },
   methods: {
     attackAlien() {
+      this.attackCounter++;
       const attackValue = getRandomNumber(5, 10);
       this.alienHealth -= attackValue;
       this.attackPlayer();
@@ -32,6 +37,12 @@ const app = Vue.createApp({
     attackPlayer() {
       const attackValue = getRandomNumber(8, 13);
       this.playerHealth -= attackValue;
+    },
+    specialAttack() {
+      this.attackCounter++;
+      const attackValue = getRandomNumber(8, 20);
+      this.alienHealth -= attackValue;
+      this.attackPlayer();
     },
   },
 });

@@ -29,7 +29,9 @@
       </section>
       <section id="controls">
         <button @click="attackAlien">Primary Attack</button>
-        <button>Special Attack</button>
+        <button :disabled="enableSpecial" @click="specialAttack">
+          Special Attack
+        </button>
         <button>Recover</button>
         <button>Surrender</button>
       </section>
